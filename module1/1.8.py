@@ -1,3 +1,10 @@
+'''
+Jesse Duncan
+SDEV 220
+Chapter 2
+Due June 10, 2018
+'''
+
 import math
 pi = math.pi
 radius = 5.5

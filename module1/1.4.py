@@ -1,3 +1,10 @@
+'''
+Jesse Duncan
+SDEV 220
+Chapter 2
+Due June 10, 2018
+'''
+
 print("a        a^2       a^3")
 print("1        1         1")
 print("2        4         8")
