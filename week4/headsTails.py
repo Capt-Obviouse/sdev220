@@ -8,7 +8,6 @@ Due July 1, 2018
 
 def displayHeadsTails(number): # Convert a number into binary
     binaryNumber = '{0:09b}'.format(number)
-
     binaryNumbersList = list(str(binaryNumber))
     binaryList = [] # Init a blank list to store the H & T
     for x in binaryNumbersList:
@@ -18,9 +17,9 @@ def displayHeadsTails(number): # Convert a number into binary
         else:
             coinSide = "T"
         binaryList.append(coinSide)
-    start = 0
+    start = 0 # Starting position to track when to insert line break
     for x in binaryList:
-        if(start == 3 or start == 6):
+        if(start == 3 or start == 6): # Inserts line break after 3 characters
             print("\n", end = "")
         print(x, end = " ")
         start += 1
