@@ -29,22 +29,39 @@ class Account:
     def deposit(self, amount):
         self.balance += amount
 
+
 idList = 0
 accountList = []
 while idList <= 9:
     accountList.append(Account())
     accountList[idList].setId(idList)
     idList += 1
-getInput = eval(input("Enter an account id: "))
 
-for x in accountList:
-    print(str(x.getId()))
+while True: # Main game loop
 
+    getAccountID = eval(input("Enter an account id: "))
 
-validInput = False
-while validInput == False:
-    for x in accountList:
-        if x.getId() == getInput:
-            validInput = True
-            break
-    getInput = eval(input(("The ID you entered is incorrect, please enter an account id: ")))
+    validInput = False
+    while validInput == False:
+        for x in accountList:
+            if x.getId() == getAccountID:
+                validInput = True
+                break
+        if validInput == False:
+            getAccountID = eval(input(("The ID you entered is incorrect, please enter an account id: ")))
+    # Individual account menu loop
+    exit = False
+    while exit == False:
+        getInput = eval(input("\n" + "Main Menu" + "\n" + "1: check balance " + "\n" + "2: withdraw " + "\n" + "3: deposit " + "\n" + "4: exit " + "\n" + "Enter a choice: "))
+        if getInput == 1:
+            print("The balance is: ", accountList[getAccountID].getBalance())
+        elif getInput == 2:
+            withdrawAmount = eval(input("Enter an amount to withdraw: "))
+            accountList[getAccountID].withdraw(withdrawAmount)
+        elif getInput == 3:
+            depositAmount = eval(input("Enter an amount to deposit: "))
+            accountList[getAccountID].deposit(depositAmount)
+        elif getInput == 4:
+            exit = True
+        else:
+            print("Invalid Entry, please try again")
