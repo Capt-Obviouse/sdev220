@@ -1,10 +1,3 @@
-'''
-Jesse Duncan
-SDEV 220
-Programming Exercise: 19.2
-Due July 22, 2018
-'''
-
 class BinaryTree:
     def __init__(self):
         self.root = None
@@ -143,20 +136,6 @@ class BinaryTree:
     def getRoot(self):
         return self.root
 
-    def isFullBinaryTree(self):
-        return self.isFullBinaryTreeHelper(self.root)
-
-    def isFullBinaryTreeHelper(self, root):
-        if root is None:
-            return True
-
-        if root.left is None and root.right is None:
-            return True
-
-        if root.left is not None and root.right is not None:
-            return (self.isFullBinaryTreeHelper(root.left) and self.isFullBinaryTreeHelper(root.right))
-
-        return False
 
 class TreeNode:
     def __init__(self, e):
@@ -170,13 +149,7 @@ tree.insert("George")
 tree.insert("Michael")
 tree.insert("Tom")
 tree.insert("Adam")
-tree.insert("Jane")
 
-print("Inorder (sorted): ", end = "")
+print("Inorder (sorted): ", end = " ")
 tree.inorder()
-print("\nPostorder: ", end = "")
-tree.postorder()
-print("\nPreorder: ", end = "")
-tree.preorder()
-print("\nThe numbef of nodes is " + str(tree.getSize()))
-print(tree.isFullBinaryTree())
+print()
